@@ -21,7 +21,7 @@ function App() {
   }, []);
   if (isFetching) {
     return (
-      <div>
+      <div className="lose">
         <h1>My GitHub Repos:</h1>
         <h2>Data Fetching, please wait!</h2>
       </div>
@@ -29,16 +29,20 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>My GitHub Repos:</h1>
-      <h2>Data Fetched!</h2>
+    <div className="win">
+      <div className="lose">
+        <h1>My GitHub Repos:</h1>
+        <h2>Data Fetched!</h2>
+      </div>
       <ul>
         {repos.map((reposObj, index) => {
           return (
-            <li key={reposObj.id}>
-              {index + 1}:)&nbsp;&nbsp;&nbsp;&nbsp;
-              {reposObj.id} ===={">"} {reposObj.name}
-            </li>
+            <span>
+              <li key={reposObj.id}>
+                {index + 1}:)&nbsp;&nbsp;&nbsp;&nbsp;
+                {reposObj.id} ===={">"} {reposObj.name}
+              </li>
+            </span>
           );
         })}
       </ul>

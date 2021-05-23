@@ -1,3 +1,9 @@
 li {
   font-size: larger;
 }
+.win {
+  background-color: darkolivegreen;
+}
+.lose {
+  background-color: darkkhaki;
+}
